@@ -1,1 +1,2 @@
 # NSISUpdaterSample
+NSISを使用し、アップデートに対応したインストーラのサンプル
