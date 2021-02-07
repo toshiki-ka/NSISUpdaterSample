@@ -55,9 +55,16 @@ Function INSTALL_TYPE_SELECT_LEAVE
 	${EndIf}
 FunctionEnd
 
+Function installTargetPre
+	${If} $installType == "updater"
+    Abort
+	${EndIf}
+FunctionEnd
+
 # ページ設定
 !insertmacro MUI_PAGE_WELCOME
 Page custom INSTALL_TYPE_SELECT INSTALL_TYPE_SELECT_LEAVE
+!define MUI_PAGE_CUSTOMFUNCTION_PRE updatePrevent
 !insertmacro MUI_PAGE_DIRECTORY
 !insertmacro MUI_PAGE_INSTFILES
 !insertmacro MUI_PAGE_FINISH 
